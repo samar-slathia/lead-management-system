@@ -38,6 +38,29 @@ function Dashboard() {
 
   return (
     <div className="dashboard-page">
+    
+     <div className="stats">
+  <div className="stat-card">
+    <h3>{leads.length}</h3>
+    <p>Total Leads</p>
+  </div>
+
+  <div className="stat-card">
+    <h3>{leads.filter((lead) => lead.status === "New").length}</h3>
+    <p>New</p>
+  </div>
+
+  <div className="stat-card">
+    <h3>{leads.filter((lead) => lead.status === "Contacted").length}</h3>
+    <p>Contacted</p>
+  </div>
+
+  <div className="stat-card">
+    <h3>{leads.filter((lead) => lead.status === "Won").length}</h3>
+    <p>Won</p>
+  </div>
+</div>
+
       <div className="toolbar">
         <h2>Dashboard</h2>
         <select value={status} onChange={(e) => setStatus(e.target.value)}>

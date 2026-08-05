@@ -14,8 +14,10 @@ function Login() {
       localStorage.setItem('token', response.data.token);
       navigate('/');
     } catch (err) {
-      setError('Invalid credentials');
-    }
+  console.log(err.response?.data);
+  console.log(err.response?.status);
+  setError(err.response?.data?.message || "Login failed");
+}
   };
 
   return (
